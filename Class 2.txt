@@ -1,0 +1,77 @@
+How do you list the files and directories ?
+ls - list the files and directories
+ls -l -- to list the files and directories in long format 
+ls -lt -- to list the files and directories in long format with time 
+ls -lrt -- To list the files and directories in long format with reverse of time 
+pwd -- Present working directory 
+touch -- is used to create empty file 
+mkdir -- is used to create a directory
+cd -- is used to change directory
+cd .. -- to come out of present directory
+cd ../.. -- if you want to come out of 2 or more directories
+cd -  acts as recall between last 2 commands 
+ls -a -- to list the hidden files and directories
+ls -al -- to list the hidden files and directories in long format 
+cat -- used to display the content of a file on the screen 
+vi -- is used to edit a file via vi editor
+	-- Esc i -- used to insert mode in vi editor
+	-- Esc:wq! -- used to save and quit the file --- w - write q - quit ! - forcefully 
+	-- Esc:q! -- quit without saving the content 
+	-- Esc:set number -- which sets the number for a file 
+	-- Esc:setnonumber -- which removes the number for a file 
+	Replace a string in the editor
+	syntax: Esc:%s/string1/string2/g
+		- s stands for substitute and g stands for globally 
+	Examples : Esc:1s/string1/string2/g -- changes in 1st line only 
+	Esc:1,5 s/string1/string2/g -- changes from 1st to 5th line 
+	Esc: 7,$ s/string1/string2/g -- changes from 7th line end of file 
+	esc: 1 s/string1/string2/1 -- changes in 1s line 1st occurance only 
+-- Search a pattern /string 
+Esc :/ pattern  -- it will move to 1st occurance then keep pressing n to 2nd and so on 
+
+-- How do you delete the whole line in editor 
+Esc dd
+
+Cut and paste in a file 
+command : cut -d -f(colname) filename
+d - delimeter
+example 
+cut -d- -f2-5 f1.txt
+paste -- paste displays lines of multiple files line by line 
+command: 
+paste f1.txt f2.txt 
+
+cp command (Copy):
+It is used to copy content of a file from one to another 
+If  destination file doesn't exist then i will create and copy it . If it is alreasy exist then it will override the content.
+syntax: cp file1.txt file2.txt
+cp -r dir1 dir2
+
+mv command (Move):
+The source will get deleted and moved to destination. this also can be called as rename 
+mv file1 fil2
+mv file dir
+mv *.txt dir/
+
+chmod command :
+Used to change the permission of a file or directory 
+User Group Others
+f or d or l -- file or directory or link
+r - read
+w - write 
+x- execute
+rwx- users
+2nd set is knows as groups 
+3rd set is knows as others 
+r - 4   user read 4 write 2 execute 1 4+2+1=7
+w- 2    read -4 execute - 1 4+1=5
+x- 1    read=4  4
+chmod 754 f1.txt
+chmod -R 777 dir/
+
+Chown command:
+Changing the ownership of a file or directory 
+syntax: chown -R newowner dir
+chown newowner filename 
+chgrp (changing group):
+syntax:  chgrp new groupname filename 
